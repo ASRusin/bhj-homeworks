@@ -4,7 +4,8 @@ const timerID = setInterval(() =>{
         timer.textContent = Number(timer.textContent) - 1;
     } else if (Number(timer.textContent) === 0) {
         clearInterval(timerID)
-        alert('Вы победили в конкурсе!!!')         
+       // alert('Вы победили в конкурсе!!!')    
+        location.assign('Победа.rar')     
     } else {
         timer.textContent = `0${Number(timer.textContent) - 1}`;        
     }
