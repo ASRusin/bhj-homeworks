@@ -9,7 +9,7 @@ cookie.onclick = function cookieClick() {
     } else {
         cookie.width = 300
     }
-    let secondClick = new Date().getSeconds() + ((new Date().getMilliseconds()) / 1000).toFixed(1);
+    let secondClick = ((new Date().getTime()) / 1000).toFixed(1);
     const speedClick = 1 / (secondClick - firstClick);
     speed.textContent = speedClick.toFixed(2);
     firstClick = secondClick; 
