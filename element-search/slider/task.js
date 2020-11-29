@@ -12,7 +12,8 @@ function isActive(item) {
   sliderDots[numSlide].className = "slider__dot slider__dot_active";
 }
 
-arrowNext.onclick = () => {
+arrowNext.onclick = (event) => {
+  event.stopPropagation();
   if (numSlide < sliderItem.length - 1) {
     isActive(numSlide + 1);
   } else {
@@ -20,7 +21,8 @@ arrowNext.onclick = () => {
   }
 };
 
-arrowPrev.onclick = () => {
+arrowPrev.onclick = (event) => {
+  event.stopPropagation();
   if (numSlide > 0) {
     isActive(numSlide - 1);
   } else {
