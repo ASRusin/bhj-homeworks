@@ -1,3 +1,6 @@
+body {
+  display: flex;
+}
 .dropdown {
   list-style-type: none;
   padding: 0;
@@ -5,6 +8,7 @@
   position: relative;
   font-family: Helvetica;
   font-weight: 300;
+  margin-left: 20px;
 }
 
 .dropdown__value {
@@ -18,7 +22,7 @@
 }
 
 .dropdown__value:after {
-  content: '\21E9';
+  content: "\21E9";
   margin-left: 5px;
 }
 
