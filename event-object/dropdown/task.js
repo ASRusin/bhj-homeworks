@@ -5,11 +5,13 @@ const dropdownItems = [...document.getElementsByClassName("dropdown__link")];
 for (let i = 0; i < dropdownValue.length; i++) {
   dropdownValue[i].addEventListener("click", () => {
     for (let list of dropdownList) {
-      if (list.className.includes("dropdown__list_active")) {
+      if (list !== dropdownList[i]) {
         list.className = "dropdown__list";
       }
-    };
-    if (dropdownList[i].className.includes("dropdown__list_active") === false) {
+    }
+    if (dropdownList[i].className.includes("dropdown__list_active")) {
+      dropdownList[i].className = "dropdown__list";
+    } else {
       dropdownList[i].className = "dropdown__list dropdown__list_active";
     }
   });
