@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
   const rotator = [...document.getElementsByClassName("rotator")];
   const rotatorCases = rotator.map((x) => [...x.querySelectorAll(".rotator__case")]);
 
@@ -17,4 +16,4 @@ document.addEventListener("DOMContentLoaded", () => {
       i++;
     }, 1000);
   }
-});
+
