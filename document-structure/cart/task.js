@@ -17,7 +17,7 @@ for (let i = 0; i < dec.length; i++) {
   });
   productAdd[i].addEventListener("click", () => {
     const productCard = [...document.getElementsByClassName("cart__product")];
-    if (productCard.filter((x) => x.dataset.id === product[i].dataset.id).length > 0) {
+    if (productCard.find((x) => x.dataset.id === product[i].dataset.id)) {
       for (let j = 0; j < productCard.length; j++) {
         if (productCard[j].dataset.id === product[i].dataset.id) {
           const productCount = productCard[j].querySelector(".cart__product-count");
@@ -34,3 +34,5 @@ for (let i = 0; i < dec.length; i++) {
     }
   });
 }
+
+
