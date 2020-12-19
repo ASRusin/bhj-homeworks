@@ -5,17 +5,32 @@ const button = document.getElementById("tasks__add");
 
 function addTask(e) {
   e.preventDefault();
-  tasksList.innerHTML += `<div class="task"><div class="task__title">${input.value} </div><a href="#" class="task__remove">&times;</a></div>`;
-  input.value = "";
-  const remove = [...tasksList.getElementsByClassName("task__remove")];
-  remove.forEach((x) => {
-    x.addEventListener("click", () => {
-      tasksList.querySelector(".task").remove();
+  const task = document.createElement("div");
+  const taskTitle = document.createElement("div");
+  const taskRemove = document.createElement("a");
+
+  task.className = "task";
+  taskTitle.className = "task__title";
+  taskRemove.className = "task__remove";
+
+  taskTitle.textContent = `${input.value}`;
+
+  taskRemove.href = "#";
+  taskRemove.innerText = `×`;
+
+  task.appendChild(taskTitle);
+  task.appendChild(taskRemove);
+  if (input.value) {
+    tasksList.appendChild(task);
+    input.value = "";
+    taskRemove.addEventListener("click", (e) => {
+      e.preventDefault();
+      task.remove();
     });
-  });
+  }
 }
 window.addEventListener("keyup", (e) => {
-  if ((e.code === "Enter" || e.code === "NumpadEnter") && input.value) {
+  if (e.key === "Enter") {
     addTask(e);
   }
 });
